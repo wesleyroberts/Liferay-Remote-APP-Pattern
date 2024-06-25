@@ -6,7 +6,12 @@ import App from './App';
 
 class WebComponent extends HTMLElement {
   connectedCallback() {
-    ReactDOM.render(<App />, this);
+    const properties = {
+
+      dynamic_property_test: this.getAttribute('dynamic_property_test'),
+
+ };
+    ReactDOM.render(<App properties={properties}/>, this);
   }
 }
 
